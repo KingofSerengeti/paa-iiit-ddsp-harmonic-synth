@@ -1,0 +1,1108 @@
+/home/kk-test/paa-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:307: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+GPU: NVIDIA GeForce RTX 5070 | torch 2.11.0+cu128
+{'impl': 'faithful_eager', 'B': 1, 'K': 100, 'T': 1024, 'ms_median': 0.2792, 'ms_std': 0.0085, 'samples_per_s': 3667412, 'peak_extra_MB': 2.7, 'energy_mJ': 9.789, 'energy_std': 0.702, 'max_abs_err_vs_fp64': '1.387e-04', 'rel_l2_err': '1.408e-04', 'active_harmonic_frac': 0.319}
+{'impl': 'faithful_angular_eager', 'B': 1, 'K': 100, 'T': 1024, 'ms_median': 0.2976, 'ms_std': 0.0156, 'samples_per_s': 3440860, 'peak_extra_MB': 4.6, 'energy_mJ': 11.049, 'energy_std': 0.775, 'max_abs_err_vs_fp64': '9.851e-05', 'rel_l2_err': '1.231e-04', 'active_harmonic_frac': 0.319}
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0] Error in codegen for ComputedBuffer(name='buf3', layout=FixedLayout('cuda:0', torch.float32, size=[1, 1024, 100], stride=[102400, 100, 1]), data=Pointwise(
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   'cuda',
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   torch.float32,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   def inner_fn(index):
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       _, i1, i2 = index
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp0 = ops.index_expr(i1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp1 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp2 = tmp0 * tmp1
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp3 = ops.constant(0, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp4 = tmp2 + tmp3
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp5 = ops.to_dtype(tmp4, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp6 = ops.constant(0.015625, torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp7 = tmp5 * tmp6
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp8 = ops.floor(tmp7)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp9 = ops.to_dtype(tmp8, torch.int64, src_dtype=torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp10 = ops.constant(15, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp11 = ops.minimum(tmp9, tmp10)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp12 = ops.load(arg0_1, tmp11)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp13 = ops.index_expr(i2, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp14 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp15 = tmp13 * tmp14
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp16 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp17 = tmp15 + tmp16
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp18 = ops.to_dtype(tmp17, torch.float32, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp19 = tmp12 * tmp18
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp20 = ops.constant(1, torch.float32)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp21 = ops.index_expr(i1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp22 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp23 = tmp21 * tmp22
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp24 = ops.constant(0, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp25 = tmp23 + tmp24
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp26 = ops.to_dtype(tmp25, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp27 = ops.constant(0.015625, torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp28 = tmp26 * tmp27
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp29 = ops.index_expr(i1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp30 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp31 = tmp29 * tmp30
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp32 = ops.constant(0, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp33 = tmp31 + tmp32
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp34 = ops.to_dtype(tmp33, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp35 = ops.constant(0.015625, torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp36 = tmp34 * tmp35
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp37 = ops.floor(tmp36)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp38 = ops.to_dtype(tmp37, torch.int64, src_dtype=torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp39 = ops.constant(15, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp40 = ops.minimum(tmp38, tmp39)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp41 = ops.to_dtype(tmp40, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp42 = tmp28 - tmp41
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp43 = ops.to_dtype(tmp42, torch.float32, src_dtype=torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp44 = tmp20 - tmp43
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp45 = tmp19 * tmp44
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp46 = ops.index_expr(i1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp47 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp48 = tmp46 * tmp47
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp49 = ops.constant(0, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp50 = tmp48 + tmp49
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp51 = ops.to_dtype(tmp50, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp52 = ops.constant(0.015625, torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp53 = tmp51 * tmp52
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp54 = ops.floor(tmp53)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp55 = ops.to_dtype(tmp54, torch.int64, src_dtype=torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp56 = ops.constant(15, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp57 = ops.minimum(tmp55, tmp56)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp58 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp59 = tmp57 + tmp58
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp60 = ops.constant(15, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp61 = ops.minimum(tmp59, tmp60)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp62 = ops.load(arg0_1, tmp61)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp63 = ops.index_expr(i2, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp64 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp65 = tmp63 * tmp64
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp66 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp67 = tmp65 + tmp66
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp68 = ops.to_dtype(tmp67, torch.float32, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp69 = tmp62 * tmp68
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp70 = ops.index_expr(i1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp71 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp72 = tmp70 * tmp71
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp73 = ops.constant(0, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp74 = tmp72 + tmp73
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp75 = ops.to_dtype(tmp74, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp76 = ops.constant(0.015625, torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp77 = tmp75 * tmp76
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp78 = ops.index_expr(i1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp79 = ops.constant(1, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp80 = tmp78 * tmp79
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp81 = ops.constant(0, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp82 = tmp80 + tmp81
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp83 = ops.to_dtype(tmp82, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp84 = ops.constant(0.015625, torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp85 = tmp83 * tmp84
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp86 = ops.floor(tmp85)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp87 = ops.to_dtype(tmp86, torch.int64, src_dtype=torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp88 = ops.constant(15, torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp89 = ops.minimum(tmp87, tmp88)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp90 = ops.to_dtype(tmp89, torch.float64, src_dtype=torch.int64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp91 = tmp77 - tmp90
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp92 = ops.to_dtype(tmp91, torch.float32, src_dtype=torch.float64)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp93 = tmp69 * tmp92
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp94 = tmp45 + tmp93
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp95 = ops.constant(6.283185307179586, torch.float32)
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       tmp96 = tmp94 * tmp95
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return tmp96
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ranges=[1, 1024, 100],
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   origin_node=mul_12,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   origins=OrderedSet([mul_12, add_3, mul_5, index, mul_1, conve...,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 88, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return oscillator_bank(freq_env, amp_env, sample_rate, use_angular_cumsum),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 71, in oscillator_bank,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       omegas = freq_env * (2.0 * math.pi),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 34, in resample_linear,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return x[:, i0] * (1 - frac) + x[:, i1] * frac           # [B,T,C],
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 24, in get_harmonic_frequencies,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return f0 * k,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 23, in get_harmonic_frequencies,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       k = torch.arange(1, n_harmonics + 1, device=f0.device, dtype=f0.dtype),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 31, in resample_linear,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       i0 = src.floor().long().clamp(max=Fr - 1),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 30, in resample_linear,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       src = torch.arange(n_samples, device=x.device, dtype=torch.float64) * (Fr / n_samples),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 33, in resample_linear,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       frac = (src - i0.to(src.dtype)).to(x.dtype)[None, :, None],
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   },
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   stack_traces = {,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 32, in resample_linear,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]       i1 = (i0 + 1).clamp(max=Fr - 1),
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   ,
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0]   }
+C1030 11:54:16.240000 975957 torch/_inductor/scheduler.py:1757] [0/0] ), _split_size=None, _original_inner_fn=None, _original_ranges=None, _original_reduction_ranges=None)
+FAILED faithful_compile 1 100 1024 -> InductorError('TypeError: list indices must be integers or slices, not NoneType\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"\n')
+{'impl': 'faithful_angular_compile', 'B': 1, 'K': 100, 'T': 1024, 'ms_median': 0.0464, 'ms_std': 0.0043, 'samples_per_s': 22076578, 'peak_extra_MB': 1.2, 'energy_mJ': 2.696, 'energy_std': 0.163, 'max_abs_err_vs_fp64': '7.854e-06', 'rel_l2_err': '1.718e-05', 'active_harmonic_frac': 0.319}
+{'impl': 'faithful_eager', 'B': 1, 'K': 100, 'T': 16000, 'ms_median': 2.1783, 'ms_std': 0.0052, 'samples_per_s': 7345218, 'peak_extra_MB': 43.1, 'energy_mJ': 127.133, 'energy_std': 4.593, 'max_abs_err_vs_fp64': '2.054e-02', 'rel_l2_err': '1.272e-02', 'active_harmonic_frac': 0.316}
+{'impl': 'faithful_angular_eager', 'B': 1, 'K': 100, 'T': 16000, 'ms_median': 0.6234, 'ms_std': 0.2165, 'samples_per_s': 25666693, 'peak_extra_MB': 43.1, 'energy_mJ': 35.646, 'energy_std': 2.545, 'max_abs_err_vs_fp64': '4.900e-04', 'rel_l2_err': '4.797e-04', 'active_harmonic_frac': 0.316}
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1] Error in codegen for ComputedBuffer(name='buf3', layout=FixedLayout('cuda:0', torch.float32, size=[1, 16000, 100], stride=[1600000, 100, 1]), data=Pointwise(
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   'cuda',
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   torch.float32,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   def inner_fn(index):
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       _, i1, i2 = index
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp0 = ops.index_expr(i1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp1 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp2 = tmp0 * tmp1
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp3 = ops.constant(0, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp4 = tmp2 + tmp3
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp5 = ops.to_dtype(tmp4, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp6 = ops.constant(0.015625, torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp7 = tmp5 * tmp6
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp8 = ops.floor(tmp7)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp9 = ops.to_dtype(tmp8, torch.int64, src_dtype=torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp10 = ops.constant(249, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp11 = ops.minimum(tmp9, tmp10)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp12 = ops.load(arg0_1, tmp11)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp13 = ops.index_expr(i2, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp14 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp15 = tmp13 * tmp14
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp16 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp17 = tmp15 + tmp16
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp18 = ops.to_dtype(tmp17, torch.float32, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp19 = tmp12 * tmp18
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp20 = ops.constant(1, torch.float32)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp21 = ops.index_expr(i1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp22 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp23 = tmp21 * tmp22
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp24 = ops.constant(0, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp25 = tmp23 + tmp24
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp26 = ops.to_dtype(tmp25, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp27 = ops.constant(0.015625, torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp28 = tmp26 * tmp27
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp29 = ops.index_expr(i1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp30 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp31 = tmp29 * tmp30
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp32 = ops.constant(0, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp33 = tmp31 + tmp32
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp34 = ops.to_dtype(tmp33, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp35 = ops.constant(0.015625, torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp36 = tmp34 * tmp35
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp37 = ops.floor(tmp36)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp38 = ops.to_dtype(tmp37, torch.int64, src_dtype=torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp39 = ops.constant(249, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp40 = ops.minimum(tmp38, tmp39)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp41 = ops.to_dtype(tmp40, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp42 = tmp28 - tmp41
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp43 = ops.to_dtype(tmp42, torch.float32, src_dtype=torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp44 = tmp20 - tmp43
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp45 = tmp19 * tmp44
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp46 = ops.index_expr(i1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp47 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp48 = tmp46 * tmp47
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp49 = ops.constant(0, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp50 = tmp48 + tmp49
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp51 = ops.to_dtype(tmp50, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp52 = ops.constant(0.015625, torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp53 = tmp51 * tmp52
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp54 = ops.floor(tmp53)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp55 = ops.to_dtype(tmp54, torch.int64, src_dtype=torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp56 = ops.constant(249, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp57 = ops.minimum(tmp55, tmp56)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp58 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp59 = tmp57 + tmp58
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp60 = ops.constant(249, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp61 = ops.minimum(tmp59, tmp60)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp62 = ops.load(arg0_1, tmp61)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp63 = ops.index_expr(i2, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp64 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp65 = tmp63 * tmp64
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp66 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp67 = tmp65 + tmp66
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp68 = ops.to_dtype(tmp67, torch.float32, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp69 = tmp62 * tmp68
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp70 = ops.index_expr(i1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp71 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp72 = tmp70 * tmp71
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp73 = ops.constant(0, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp74 = tmp72 + tmp73
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp75 = ops.to_dtype(tmp74, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp76 = ops.constant(0.015625, torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp77 = tmp75 * tmp76
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp78 = ops.index_expr(i1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp79 = ops.constant(1, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp80 = tmp78 * tmp79
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp81 = ops.constant(0, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp82 = tmp80 + tmp81
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp83 = ops.to_dtype(tmp82, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp84 = ops.constant(0.015625, torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp85 = tmp83 * tmp84
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp86 = ops.floor(tmp85)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp87 = ops.to_dtype(tmp86, torch.int64, src_dtype=torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp88 = ops.constant(249, torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp89 = ops.minimum(tmp87, tmp88)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp90 = ops.to_dtype(tmp89, torch.float64, src_dtype=torch.int64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp91 = tmp77 - tmp90
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp92 = ops.to_dtype(tmp91, torch.float32, src_dtype=torch.float64)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp93 = tmp69 * tmp92
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp94 = tmp45 + tmp93
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp95 = ops.constant(6.283185307179586, torch.float32)
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       tmp96 = tmp94 * tmp95
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return tmp96
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ranges=[1, 16000, 100],
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   origin_node=mul_12,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   origins=OrderedSet([mul_12, add_3, mul_5, index, mul_1, conve...,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 88, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return oscillator_bank(freq_env, amp_env, sample_rate, use_angular_cumsum),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 71, in oscillator_bank,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       omegas = freq_env * (2.0 * math.pi),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 34, in resample_linear,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return x[:, i0] * (1 - frac) + x[:, i1] * frac           # [B,T,C],
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 24, in get_harmonic_frequencies,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return f0 * k,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 23, in get_harmonic_frequencies,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       k = torch.arange(1, n_harmonics + 1, device=f0.device, dtype=f0.dtype),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 31, in resample_linear,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       i0 = src.floor().long().clamp(max=Fr - 1),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 30, in resample_linear,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       src = torch.arange(n_samples, device=x.device, dtype=torch.float64) * (Fr / n_samples),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 33, in resample_linear,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       frac = (src - i0.to(src.dtype)).to(x.dtype)[None, :, None],
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   },
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   stack_traces = {,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 32, in resample_linear,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]       i1 = (i0 + 1).clamp(max=Fr - 1),
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   ,
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1]   }
+C1030 11:54:38.673000 975957 torch/_inductor/scheduler.py:1757] [0/1] ), _split_size=None, _original_inner_fn=None, _original_ranges=None, _original_reduction_ranges=None)
+FAILED faithful_compile 1 100 16000 -> InductorError('TypeError: list indices must be integers or slices, not NoneType\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"\n')
+{'impl': 'faithful_angular_compile', 'B': 1, 'K': 100, 'T': 16000, 'ms_median': 0.1178, 'ms_std': 0.0012, 'samples_per_s': 135851104, 'peak_extra_MB': 6.2, 'energy_mJ': 17.549, 'energy_std': 0.638, 'max_abs_err_vs_fp64': '4.085e-04', 'rel_l2_err': '1.934e-04', 'active_harmonic_frac': 0.316}
+{'impl': 'faithful_eager', 'B': 8, 'K': 100, 'T': 64000, 'ms_median': 31.2381, 'ms_std': 0.3358, 'samples_per_s': 16390243, 'peak_extra_MB': 1378.1, 'energy_mJ': 3144.213, 'energy_std': 42.993, 'max_abs_err_vs_fp64': '7.527e-01', 'rel_l2_err': '2.975e-01', 'active_harmonic_frac': 0.37}
+{'impl': 'faithful_angular_eager', 'B': 8, 'K': 100, 'T': 64000, 'ms_median': 13.7968, 'ms_std': 0.2264, 'samples_per_s': 37110140, 'peak_extra_MB': 1378.3, 'energy_mJ': 2241.583, 'energy_std': 83.981, 'max_abs_err_vs_fp64': '4.629e-03', 'rel_l2_err': '1.933e-03', 'active_harmonic_frac': 0.37}
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2] Error in codegen for ComputedBuffer(name='buf3', layout=FixedLayout('cuda:0', torch.float32, size=[8, 64000, 100], stride=[6400000, 100, 1]), data=Pointwise(
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   'cuda',
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   torch.float32,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   def inner_fn(index):
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       i0, i1, i2 = index
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp0 = ops.index_expr(i1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp1 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp2 = tmp0 * tmp1
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp3 = ops.constant(0, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp4 = tmp2 + tmp3
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp5 = ops.to_dtype(tmp4, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp6 = ops.constant(0.015625, torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp7 = tmp5 * tmp6
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp8 = ops.floor(tmp7)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp9 = ops.to_dtype(tmp8, torch.int64, src_dtype=torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp10 = ops.constant(999, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp11 = ops.minimum(tmp9, tmp10)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp12 = ops.load(arg0_1, tmp11 + 1000 * i0)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp13 = ops.index_expr(i2, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp14 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp15 = tmp13 * tmp14
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp16 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp17 = tmp15 + tmp16
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp18 = ops.to_dtype(tmp17, torch.float32, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp19 = tmp12 * tmp18
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp20 = ops.constant(1, torch.float32)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp21 = ops.index_expr(i1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp22 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp23 = tmp21 * tmp22
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp24 = ops.constant(0, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp25 = tmp23 + tmp24
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp26 = ops.to_dtype(tmp25, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp27 = ops.constant(0.015625, torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp28 = tmp26 * tmp27
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp29 = ops.index_expr(i1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp30 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp31 = tmp29 * tmp30
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp32 = ops.constant(0, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp33 = tmp31 + tmp32
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp34 = ops.to_dtype(tmp33, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp35 = ops.constant(0.015625, torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp36 = tmp34 * tmp35
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp37 = ops.floor(tmp36)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp38 = ops.to_dtype(tmp37, torch.int64, src_dtype=torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp39 = ops.constant(999, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp40 = ops.minimum(tmp38, tmp39)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp41 = ops.to_dtype(tmp40, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp42 = tmp28 - tmp41
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp43 = ops.to_dtype(tmp42, torch.float32, src_dtype=torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp44 = tmp20 - tmp43
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp45 = tmp19 * tmp44
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp46 = ops.index_expr(i1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp47 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp48 = tmp46 * tmp47
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp49 = ops.constant(0, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp50 = tmp48 + tmp49
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp51 = ops.to_dtype(tmp50, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp52 = ops.constant(0.015625, torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp53 = tmp51 * tmp52
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp54 = ops.floor(tmp53)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp55 = ops.to_dtype(tmp54, torch.int64, src_dtype=torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp56 = ops.constant(999, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp57 = ops.minimum(tmp55, tmp56)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp58 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp59 = tmp57 + tmp58
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp60 = ops.constant(999, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp61 = ops.minimum(tmp59, tmp60)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp62 = ops.load(arg0_1, tmp61 + 1000 * i0)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp63 = ops.index_expr(i2, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp64 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp65 = tmp63 * tmp64
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp66 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp67 = tmp65 + tmp66
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp68 = ops.to_dtype(tmp67, torch.float32, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp69 = tmp62 * tmp68
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp70 = ops.index_expr(i1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp71 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp72 = tmp70 * tmp71
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp73 = ops.constant(0, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp74 = tmp72 + tmp73
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp75 = ops.to_dtype(tmp74, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp76 = ops.constant(0.015625, torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp77 = tmp75 * tmp76
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp78 = ops.index_expr(i1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp79 = ops.constant(1, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp80 = tmp78 * tmp79
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp81 = ops.constant(0, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp82 = tmp80 + tmp81
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp83 = ops.to_dtype(tmp82, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp84 = ops.constant(0.015625, torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp85 = tmp83 * tmp84
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp86 = ops.floor(tmp85)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp87 = ops.to_dtype(tmp86, torch.int64, src_dtype=torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp88 = ops.constant(999, torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp89 = ops.minimum(tmp87, tmp88)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp90 = ops.to_dtype(tmp89, torch.float64, src_dtype=torch.int64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp91 = tmp77 - tmp90
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp92 = ops.to_dtype(tmp91, torch.float32, src_dtype=torch.float64)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp93 = tmp69 * tmp92
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp94 = tmp45 + tmp93
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp95 = ops.constant(6.283185307179586, torch.float32)
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       tmp96 = tmp94 * tmp95
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return tmp96
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ranges=[8, 64000, 100],
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   origin_node=mul_12,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   origins=OrderedSet([mul_12, add_3, mul_5, index, mul_1, conve...,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 88, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return oscillator_bank(freq_env, amp_env, sample_rate, use_angular_cumsum),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 71, in oscillator_bank,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       omegas = freq_env * (2.0 * math.pi),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 34, in resample_linear,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return x[:, i0] * (1 - frac) + x[:, i1] * frac           # [B,T,C],
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 24, in get_harmonic_frequencies,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return f0 * k,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 23, in get_harmonic_frequencies,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       k = torch.arange(1, n_harmonics + 1, device=f0.device, dtype=f0.dtype),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 31, in resample_linear,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       i0 = src.floor().long().clamp(max=Fr - 1),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 30, in resample_linear,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       src = torch.arange(n_samples, device=x.device, dtype=torch.float64) * (Fr / n_samples),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 33, in resample_linear,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       frac = (src - i0.to(src.dtype)).to(x.dtype)[None, :, None],
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   },
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   stack_traces = {,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 32, in resample_linear,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]       i1 = (i0 + 1).clamp(max=Fr - 1),
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   ,
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2]   }
+C1030 11:55:04.920000 975957 torch/_inductor/scheduler.py:1757] [0/2] ), _split_size=None, _original_inner_fn=None, _original_ranges=None, _original_reduction_ranges=None)
+FAILED faithful_compile 8 100 64000 -> InductorError('TypeError: list indices must be integers or slices, not NoneType\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"\n')
+{'impl': 'faithful_angular_compile', 'B': 8, 'K': 100, 'T': 64000, 'ms_median': 2.0093, 'ms_std': 0.0104, 'samples_per_s': 254813584, 'peak_extra_MB': 198.1, 'energy_mJ': 481.486, 'energy_std': 20.854, 'max_abs_err_vs_fp64': '2.867e-03', 'rel_l2_err': '8.228e-04', 'active_harmonic_frac': 0.37}
+{'impl': 'faithful_eager', 'B': 8, 'K': 64, 'T': 64000, 'ms_median': 25.78, 'ms_std': 0.2644, 'samples_per_s': 19860382, 'peak_extra_MB': 885.9, 'energy_mJ': 2273.474, 'energy_std': 86.379, 'max_abs_err_vs_fp64': '7.527e-01', 'rel_l2_err': '2.975e-01', 'active_harmonic_frac': 0.579}
+{'impl': 'faithful_angular_eager', 'B': 8, 'K': 64, 'T': 64000, 'ms_median': 8.2164, 'ms_std': 0.1356, 'samples_per_s': 62314033, 'peak_extra_MB': 886.0, 'energy_mJ': 1353.603, 'energy_std': 34.558, 'max_abs_err_vs_fp64': '4.629e-03', 'rel_l2_err': '1.933e-03', 'active_harmonic_frac': 0.579}
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3] Error in codegen for ComputedBuffer(name='buf3', layout=FixedLayout('cuda:0', torch.float32, size=[8, 64000, 64], stride=[4096000, 64, 1]), data=Pointwise(
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   'cuda',
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   torch.float32,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   def inner_fn(index):
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       i0, i1, i2 = index
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp0 = ops.index_expr(i1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp1 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp2 = tmp0 * tmp1
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp3 = ops.constant(0, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp4 = tmp2 + tmp3
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp5 = ops.to_dtype(tmp4, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp6 = ops.constant(0.015625, torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp7 = tmp5 * tmp6
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp8 = ops.floor(tmp7)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp9 = ops.to_dtype(tmp8, torch.int64, src_dtype=torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp10 = ops.constant(999, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp11 = ops.minimum(tmp9, tmp10)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp12 = ops.load(arg0_1, tmp11 + 1000 * i0)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp13 = ops.index_expr(i2, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp14 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp15 = tmp13 * tmp14
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp16 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp17 = tmp15 + tmp16
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp18 = ops.to_dtype(tmp17, torch.float32, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp19 = tmp12 * tmp18
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp20 = ops.constant(1, torch.float32)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp21 = ops.index_expr(i1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp22 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp23 = tmp21 * tmp22
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp24 = ops.constant(0, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp25 = tmp23 + tmp24
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp26 = ops.to_dtype(tmp25, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp27 = ops.constant(0.015625, torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp28 = tmp26 * tmp27
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp29 = ops.index_expr(i1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp30 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp31 = tmp29 * tmp30
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp32 = ops.constant(0, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp33 = tmp31 + tmp32
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp34 = ops.to_dtype(tmp33, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp35 = ops.constant(0.015625, torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp36 = tmp34 * tmp35
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp37 = ops.floor(tmp36)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp38 = ops.to_dtype(tmp37, torch.int64, src_dtype=torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp39 = ops.constant(999, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp40 = ops.minimum(tmp38, tmp39)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp41 = ops.to_dtype(tmp40, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp42 = tmp28 - tmp41
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp43 = ops.to_dtype(tmp42, torch.float32, src_dtype=torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp44 = tmp20 - tmp43
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp45 = tmp19 * tmp44
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp46 = ops.index_expr(i1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp47 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp48 = tmp46 * tmp47
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp49 = ops.constant(0, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp50 = tmp48 + tmp49
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp51 = ops.to_dtype(tmp50, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp52 = ops.constant(0.015625, torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp53 = tmp51 * tmp52
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp54 = ops.floor(tmp53)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp55 = ops.to_dtype(tmp54, torch.int64, src_dtype=torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp56 = ops.constant(999, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp57 = ops.minimum(tmp55, tmp56)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp58 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp59 = tmp57 + tmp58
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp60 = ops.constant(999, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp61 = ops.minimum(tmp59, tmp60)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp62 = ops.load(arg0_1, tmp61 + 1000 * i0)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp63 = ops.index_expr(i2, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp64 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp65 = tmp63 * tmp64
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp66 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp67 = tmp65 + tmp66
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp68 = ops.to_dtype(tmp67, torch.float32, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp69 = tmp62 * tmp68
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp70 = ops.index_expr(i1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp71 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp72 = tmp70 * tmp71
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp73 = ops.constant(0, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp74 = tmp72 + tmp73
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp75 = ops.to_dtype(tmp74, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp76 = ops.constant(0.015625, torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp77 = tmp75 * tmp76
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp78 = ops.index_expr(i1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp79 = ops.constant(1, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp80 = tmp78 * tmp79
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp81 = ops.constant(0, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp82 = tmp80 + tmp81
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp83 = ops.to_dtype(tmp82, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp84 = ops.constant(0.015625, torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp85 = tmp83 * tmp84
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp86 = ops.floor(tmp85)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp87 = ops.to_dtype(tmp86, torch.int64, src_dtype=torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp88 = ops.constant(999, torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp89 = ops.minimum(tmp87, tmp88)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp90 = ops.to_dtype(tmp89, torch.float64, src_dtype=torch.int64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp91 = tmp77 - tmp90
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp92 = ops.to_dtype(tmp91, torch.float32, src_dtype=torch.float64)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp93 = tmp69 * tmp92
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp94 = tmp45 + tmp93
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp95 = ops.constant(6.283185307179586, torch.float32)
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       tmp96 = tmp94 * tmp95
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return tmp96
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ranges=[8, 64000, 64],
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   origin_node=mul_12,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   origins=OrderedSet([mul_12, add_3, mul_5, index, mul_1, conve...,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 88, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return oscillator_bank(freq_env, amp_env, sample_rate, use_angular_cumsum),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 71, in oscillator_bank,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       omegas = freq_env * (2.0 * math.pi),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 34, in resample_linear,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return x[:, i0] * (1 - frac) + x[:, i1] * frac           # [B,T,C],
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 24, in get_harmonic_frequencies,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return f0 * k,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 23, in get_harmonic_frequencies,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       k = torch.arange(1, n_harmonics + 1, device=f0.device, dtype=f0.dtype),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 31, in resample_linear,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       i0 = src.floor().long().clamp(max=Fr - 1),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 30, in resample_linear,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       src = torch.arange(n_samples, device=x.device, dtype=torch.float64) * (Fr / n_samples),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 33, in resample_linear,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       frac = (src - i0.to(src.dtype)).to(x.dtype)[None, :, None],
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   },
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   stack_traces = {,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 32, in resample_linear,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]       i1 = (i0 + 1).clamp(max=Fr - 1),
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   ,
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3]   }
+C1030 11:55:32.252000 975957 torch/_inductor/scheduler.py:1757] [0/3] ), _split_size=None, _original_inner_fn=None, _original_ranges=None, _original_reduction_ranges=None)
+FAILED faithful_compile 8 64 64000 -> InductorError('TypeError: list indices must be integers or slices, not NoneType\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"\n')
+{'impl': 'faithful_angular_compile', 'B': 8, 'K': 64, 'T': 64000, 'ms_median': 1.0436, 'ms_std': 0.0087, 'samples_per_s': 490601909, 'peak_extra_MB': 128.1, 'energy_mJ': 219.387, 'energy_std': 6.192, 'max_abs_err_vs_fp64': '3.310e-03', 'rel_l2_err': '1.262e-03', 'active_harmonic_frac': 0.579}
+{'impl': 'faithful_eager', 'B': 8, 'K': 128, 'T': 64000, 'ms_median': 33.9844, 'ms_std': 0.1413, 'samples_per_s': 15065757, 'peak_extra_MB': 1757.8, 'energy_mJ': 3548.738, 'energy_std': 196.578, 'max_abs_err_vs_fp64': '7.527e-01', 'rel_l2_err': '2.975e-01', 'active_harmonic_frac': 0.289}
+{'impl': 'faithful_angular_eager', 'B': 8, 'K': 128, 'T': 64000, 'ms_median': 16.214, 'ms_std': 0.0954, 'samples_per_s': 31577713, 'peak_extra_MB': 1758.1, 'energy_mJ': 2662.134, 'energy_std': 52.052, 'max_abs_err_vs_fp64': '4.629e-03', 'rel_l2_err': '1.933e-03', 'active_harmonic_frac': 0.289}
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4] Error in codegen for ComputedBuffer(name='buf3', layout=FixedLayout('cuda:0', torch.float32, size=[8, 64000, 128], stride=[8192000, 128, 1]), data=Pointwise(
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   'cuda',
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   torch.float32,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   def inner_fn(index):
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       i0, i1, i2 = index
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp0 = ops.index_expr(i1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp1 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp2 = tmp0 * tmp1
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp3 = ops.constant(0, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp4 = tmp2 + tmp3
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp5 = ops.to_dtype(tmp4, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp6 = ops.constant(0.015625, torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp7 = tmp5 * tmp6
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp8 = ops.floor(tmp7)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp9 = ops.to_dtype(tmp8, torch.int64, src_dtype=torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp10 = ops.constant(999, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp11 = ops.minimum(tmp9, tmp10)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp12 = ops.load(arg0_1, tmp11 + 1000 * i0)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp13 = ops.index_expr(i2, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp14 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp15 = tmp13 * tmp14
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp16 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp17 = tmp15 + tmp16
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp18 = ops.to_dtype(tmp17, torch.float32, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp19 = tmp12 * tmp18
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp20 = ops.constant(1, torch.float32)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp21 = ops.index_expr(i1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp22 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp23 = tmp21 * tmp22
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp24 = ops.constant(0, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp25 = tmp23 + tmp24
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp26 = ops.to_dtype(tmp25, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp27 = ops.constant(0.015625, torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp28 = tmp26 * tmp27
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp29 = ops.index_expr(i1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp30 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp31 = tmp29 * tmp30
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp32 = ops.constant(0, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp33 = tmp31 + tmp32
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp34 = ops.to_dtype(tmp33, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp35 = ops.constant(0.015625, torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp36 = tmp34 * tmp35
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp37 = ops.floor(tmp36)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp38 = ops.to_dtype(tmp37, torch.int64, src_dtype=torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp39 = ops.constant(999, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp40 = ops.minimum(tmp38, tmp39)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp41 = ops.to_dtype(tmp40, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp42 = tmp28 - tmp41
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp43 = ops.to_dtype(tmp42, torch.float32, src_dtype=torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp44 = tmp20 - tmp43
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp45 = tmp19 * tmp44
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp46 = ops.index_expr(i1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp47 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp48 = tmp46 * tmp47
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp49 = ops.constant(0, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp50 = tmp48 + tmp49
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp51 = ops.to_dtype(tmp50, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp52 = ops.constant(0.015625, torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp53 = tmp51 * tmp52
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp54 = ops.floor(tmp53)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp55 = ops.to_dtype(tmp54, torch.int64, src_dtype=torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp56 = ops.constant(999, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp57 = ops.minimum(tmp55, tmp56)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp58 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp59 = tmp57 + tmp58
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp60 = ops.constant(999, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp61 = ops.minimum(tmp59, tmp60)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp62 = ops.load(arg0_1, tmp61 + 1000 * i0)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp63 = ops.index_expr(i2, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp64 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp65 = tmp63 * tmp64
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp66 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp67 = tmp65 + tmp66
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp68 = ops.to_dtype(tmp67, torch.float32, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp69 = tmp62 * tmp68
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp70 = ops.index_expr(i1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp71 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp72 = tmp70 * tmp71
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp73 = ops.constant(0, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp74 = tmp72 + tmp73
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp75 = ops.to_dtype(tmp74, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp76 = ops.constant(0.015625, torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp77 = tmp75 * tmp76
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp78 = ops.index_expr(i1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp79 = ops.constant(1, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp80 = tmp78 * tmp79
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp81 = ops.constant(0, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp82 = tmp80 + tmp81
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp83 = ops.to_dtype(tmp82, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp84 = ops.constant(0.015625, torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp85 = tmp83 * tmp84
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp86 = ops.floor(tmp85)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp87 = ops.to_dtype(tmp86, torch.int64, src_dtype=torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp88 = ops.constant(999, torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp89 = ops.minimum(tmp87, tmp88)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp90 = ops.to_dtype(tmp89, torch.float64, src_dtype=torch.int64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp91 = tmp77 - tmp90
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp92 = ops.to_dtype(tmp91, torch.float32, src_dtype=torch.float64)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp93 = tmp69 * tmp92
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp94 = tmp45 + tmp93
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp95 = ops.constant(6.283185307179586, torch.float32)
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       tmp96 = tmp94 * tmp95
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return tmp96
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ranges=[8, 64000, 128],
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   origin_node=mul_12,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   origins=OrderedSet([mul_12, add_3, mul_5, index, mul_1, conve...,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 88, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return oscillator_bank(freq_env, amp_env, sample_rate, use_angular_cumsum),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 71, in oscillator_bank,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       omegas = freq_env * (2.0 * math.pi),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 34, in resample_linear,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return x[:, i0] * (1 - frac) + x[:, i1] * frac           # [B,T,C],
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 24, in get_harmonic_frequencies,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return f0 * k,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 23, in get_harmonic_frequencies,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       k = torch.arange(1, n_harmonics + 1, device=f0.device, dtype=f0.dtype),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 31, in resample_linear,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       i0 = src.floor().long().clamp(max=Fr - 1),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 30, in resample_linear,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       src = torch.arange(n_samples, device=x.device, dtype=torch.float64) * (Fr / n_samples),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 33, in resample_linear,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       frac = (src - i0.to(src.dtype)).to(x.dtype)[None, :, None],
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   },
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   stack_traces = {,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 32, in resample_linear,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]       i1 = (i0 + 1).clamp(max=Fr - 1),
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   ,
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4]   }
+C1030 11:56:00.938000 975957 torch/_inductor/scheduler.py:1757] [0/4] ), _split_size=None, _original_inner_fn=None, _original_ranges=None, _original_reduction_ranges=None)
+FAILED faithful_compile 8 128 64000 -> InductorError('TypeError: list indices must be integers or slices, not NoneType\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"\n')
+{'impl': 'faithful_angular_compile', 'B': 8, 'K': 128, 'T': 64000, 'ms_median': 2.0422, 'ms_std': 0.0096, 'samples_per_s': 250707081, 'peak_extra_MB': 252.2, 'energy_mJ': 408.782, 'energy_std': 5.87, 'max_abs_err_vs_fp64': '2.913e-03', 'rel_l2_err': '1.152e-03', 'active_harmonic_frac': 0.289}
+{'impl': 'faithful_eager', 'B': 16, 'K': 100, 'T': 64000, 'ms_median': 42.5752, 'ms_std': 0.5101, 'samples_per_s': 24051533, 'peak_extra_MB': 2746.6, 'energy_mJ': 5175.757, 'energy_std': 249.974, 'max_abs_err_vs_fp64': '7.651e-01', 'rel_l2_err': '2.903e-01', 'active_harmonic_frac': 0.394}
+{'impl': 'faithful_angular_eager', 'B': 16, 'K': 100, 'T': 64000, 'ms_median': 27.5948, 'ms_std': 0.38, 'samples_per_s': 37108461, 'peak_extra_MB': 2747.0, 'energy_mJ': 4452.7, 'energy_std': 103.189, 'max_abs_err_vs_fp64': '4.810e-03', 'rel_l2_err': '2.435e-03', 'active_harmonic_frac': 0.394}
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5] Error in codegen for ComputedBuffer(name='buf3', layout=FixedLayout('cuda:0', torch.float32, size=[16, 64000, 100], stride=[6400000, 100, 1]), data=Pointwise(
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   'cuda',
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   torch.float32,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   def inner_fn(index):
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       i0, i1, i2 = index
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp0 = ops.index_expr(i1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp1 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp2 = tmp0 * tmp1
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp3 = ops.constant(0, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp4 = tmp2 + tmp3
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp5 = ops.to_dtype(tmp4, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp6 = ops.constant(0.015625, torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp7 = tmp5 * tmp6
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp8 = ops.floor(tmp7)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp9 = ops.to_dtype(tmp8, torch.int64, src_dtype=torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp10 = ops.constant(999, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp11 = ops.minimum(tmp9, tmp10)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp12 = ops.load(arg0_1, tmp11 + 1000 * i0)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp13 = ops.index_expr(i2, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp14 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp15 = tmp13 * tmp14
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp16 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp17 = tmp15 + tmp16
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp18 = ops.to_dtype(tmp17, torch.float32, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp19 = tmp12 * tmp18
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp20 = ops.constant(1, torch.float32)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp21 = ops.index_expr(i1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp22 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp23 = tmp21 * tmp22
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp24 = ops.constant(0, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp25 = tmp23 + tmp24
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp26 = ops.to_dtype(tmp25, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp27 = ops.constant(0.015625, torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp28 = tmp26 * tmp27
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp29 = ops.index_expr(i1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp30 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp31 = tmp29 * tmp30
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp32 = ops.constant(0, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp33 = tmp31 + tmp32
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp34 = ops.to_dtype(tmp33, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp35 = ops.constant(0.015625, torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp36 = tmp34 * tmp35
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp37 = ops.floor(tmp36)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp38 = ops.to_dtype(tmp37, torch.int64, src_dtype=torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp39 = ops.constant(999, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp40 = ops.minimum(tmp38, tmp39)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp41 = ops.to_dtype(tmp40, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp42 = tmp28 - tmp41
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp43 = ops.to_dtype(tmp42, torch.float32, src_dtype=torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp44 = tmp20 - tmp43
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp45 = tmp19 * tmp44
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp46 = ops.index_expr(i1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp47 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp48 = tmp46 * tmp47
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp49 = ops.constant(0, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp50 = tmp48 + tmp49
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp51 = ops.to_dtype(tmp50, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp52 = ops.constant(0.015625, torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp53 = tmp51 * tmp52
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp54 = ops.floor(tmp53)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp55 = ops.to_dtype(tmp54, torch.int64, src_dtype=torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp56 = ops.constant(999, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp57 = ops.minimum(tmp55, tmp56)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp58 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp59 = tmp57 + tmp58
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp60 = ops.constant(999, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp61 = ops.minimum(tmp59, tmp60)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp62 = ops.load(arg0_1, tmp61 + 1000 * i0)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp63 = ops.index_expr(i2, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp64 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp65 = tmp63 * tmp64
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp66 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp67 = tmp65 + tmp66
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp68 = ops.to_dtype(tmp67, torch.float32, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp69 = tmp62 * tmp68
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp70 = ops.index_expr(i1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp71 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp72 = tmp70 * tmp71
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp73 = ops.constant(0, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp74 = tmp72 + tmp73
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp75 = ops.to_dtype(tmp74, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp76 = ops.constant(0.015625, torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp77 = tmp75 * tmp76
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp78 = ops.index_expr(i1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp79 = ops.constant(1, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp80 = tmp78 * tmp79
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp81 = ops.constant(0, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp82 = tmp80 + tmp81
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp83 = ops.to_dtype(tmp82, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp84 = ops.constant(0.015625, torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp85 = tmp83 * tmp84
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp86 = ops.floor(tmp85)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp87 = ops.to_dtype(tmp86, torch.int64, src_dtype=torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp88 = ops.constant(999, torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp89 = ops.minimum(tmp87, tmp88)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp90 = ops.to_dtype(tmp89, torch.float64, src_dtype=torch.int64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp91 = tmp77 - tmp90
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp92 = ops.to_dtype(tmp91, torch.float32, src_dtype=torch.float64)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp93 = tmp69 * tmp92
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp94 = tmp45 + tmp93
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp95 = ops.constant(6.283185307179586, torch.float32)
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       tmp96 = tmp94 * tmp95
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return tmp96
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ranges=[16, 64000, 100],
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   origin_node=mul_12,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   origins=OrderedSet([mul_12, add_3, mul_5, index, mul_1, conve...,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 88, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return oscillator_bank(freq_env, amp_env, sample_rate, use_angular_cumsum),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 71, in oscillator_bank,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       omegas = freq_env * (2.0 * math.pi),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 34, in resample_linear,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return x[:, i0] * (1 - frac) + x[:, i1] * frac           # [B,T,C],
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 24, in get_harmonic_frequencies,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return f0 * k,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 81, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       harm_freqs = get_harmonic_frequencies(f0, K),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 23, in get_harmonic_frequencies,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       k = torch.arange(1, n_harmonics + 1, device=f0.device, dtype=f0.dtype),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 31, in resample_linear,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       i0 = src.floor().long().clamp(max=Fr - 1),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 30, in resample_linear,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       src = torch.arange(n_samples, device=x.device, dtype=torch.float64) * (Fr / n_samples),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 33, in resample_linear,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       frac = (src - i0.to(src.dtype)).to(x.dtype)[None, :, None],
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   },
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   stack_traces = {,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/baseline_faithful.py", line 18, in eager,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       return harmonic_synthesis(f0, amp, dist, T, SR, "window", False),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 83, in harmonic_synthesis,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       freq_env = resample_linear(harm_freqs, n_samples),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]     File "/home/kk-test/PAA/PAA_Project_Eval1/ddsp_port.py", line 32, in resample_linear,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]       i1 = (i0 + 1).clamp(max=Fr - 1),
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   ,
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5]   }
+C1030 11:56:30.855000 975957 torch/_inductor/scheduler.py:1757] [0/5] ), _split_size=None, _original_inner_fn=None, _original_ranges=None, _original_reduction_ranges=None)
+FAILED faithful_compile 16 100 64000 -> InductorError('TypeError: list indices must be integers or slices, not NoneType\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you\'re reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"\n')
+{'impl': 'faithful_angular_compile', 'B': 16, 'K': 100, 'T': 64000, 'ms_median': 4.1572, 'ms_std': 0.0394, 'samples_per_s': 246320579, 'peak_extra_MB': 394.9, 'energy_mJ': 977.836, 'energy_std': 35.386, 'max_abs_err_vs_fp64': '2.557e-03', 'rel_l2_err': '7.992e-04', 'active_harmonic_frac': 0.394}
+wrote baseline_faithful_results.csv

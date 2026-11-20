@@ -1,0 +1,65 @@
+/home/kk-test/paa-env/lib/python3.12/site-packages/torch/profiler/profiler.py:224: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+===== faithful_eager (B=8, K=100, T=64000)
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                        Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                aten::cumsum         0.01%      57.779us         0.02%      94.230us       4.712us     389.361ms        64.42%     389.361ms      19.468ms            20  
+void at::native::tensor_kernel_scan_outer_dim<float, unsi...         0.00%       0.000us         0.00%       0.000us       0.000us     389.361ms        64.42%     389.361ms      19.468ms            20  
+                                                   aten::mul         0.09%     571.783us         0.16%     960.437us       4.366us      78.625ms        13.01%      78.625ms     357.386us           220  
+void at::native::elementwise_kernel<128, 2, at::native::g...         0.00%       0.000us         0.00%       0.000us       0.000us      43.927ms         7.27%      43.927ms     366.061us           120  
+                                                   aten::add         0.03%     153.671us         0.04%     256.996us       4.283us      40.865ms         6.76%      40.865ms     681.078us            60  
+void at::native::vectorized_elementwise_kernel<4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      40.839ms         6.76%      40.839ms       1.021ms            40  
+                                                 aten::where         0.01%      58.959us         0.02%     139.647us       6.982us      22.557ms         3.73%      22.557ms       1.128ms            20  
+void at::native::vectorized_elementwise_kernel<4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      22.557ms         3.73%      22.557ms       1.128ms            20  
+void at::native::vectorized_elementwise_kernel<4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      20.512ms         3.39%      20.512ms       1.026ms            20  
+                                                 aten::index         0.03%     162.955us         0.04%     269.533us       6.738us      19.239ms         3.18%      19.239ms     480.970us            40  
+void at::native::index_elementwise_kernel<128, 4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      19.239ms         3.18%      19.239ms     480.970us            40  
+                                                   aten::sin         0.01%      47.651us         0.01%      83.445us       4.172us      15.166ms         2.51%      15.166ms     758.296us            20  
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 604.208ms
+Self CUDA time total: 604.368ms
+
+CUDA events per call (kernels + memcpy/memset): 39.0
+===== faithful_angular_eager (B=8, K=100, T=64000)
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                        Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   aten::mul         0.20%     528.712us         0.34%     882.622us       4.012us      79.628ms        30.24%      79.628ms     361.944us           220  
+                                                   aten::add         0.07%     191.309us         0.12%     316.782us       3.960us      54.631ms        20.74%      54.631ms     682.883us            80  
+void at::native::elementwise_kernel<128, 2, at::native::g...         0.00%       0.000us         0.00%       0.000us       0.000us      44.445ms        16.88%      44.445ms     370.374us           120  
+void at::native::vectorized_elementwise_kernel<4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      40.900ms        15.53%      40.900ms       1.023ms            40  
+                                                 aten::where         0.02%      55.151us         0.05%     125.169us       6.258us      22.543ms         8.56%      22.543ms       1.127ms            20  
+void at::native::vectorized_elementwise_kernel<4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      22.543ms         8.56%      22.543ms       1.127ms            20  
+void at::native::vectorized_elementwise_kernel<4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      21.011ms         7.98%      21.011ms       1.051ms            20  
+                                                 aten::index         0.06%     151.772us         0.11%     280.784us       7.020us      20.014ms         7.60%      20.014ms     500.341us            40  
+void at::native::index_elementwise_kernel<128, 4, at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us      20.014ms         7.60%      20.014ms     500.341us            40  
+                                                aten::cumsum         0.04%     114.378us         0.12%     328.488us       8.212us      19.459ms         7.39%      19.488ms     487.205us            40  
+void at::native::tensor_kernel_scan_outer_dim<float, unsi...         0.00%       0.000us         0.00%       0.000us       0.000us      19.459ms         7.39%      19.459ms     486.471us            40  
+                                                   aten::div         0.04%      97.192us         0.06%     160.950us       4.024us      14.252ms         5.41%      14.252ms     356.291us            40  
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 262.951ms
+Self CUDA time total: 263.357ms
+
+CUDA events per call (kernels + memcpy/memset): 47.0
+===== faithful_angular_compile (B=8, K=100, T=64000)
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                        Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                  Torch-Compiled Region: 0/0         0.43%     198.158us         4.22%       1.934ms      96.680us       0.000us         0.00%      45.067ms       2.253ms            20  
+## Call CompiledFxGraph fsbfwqpyvq4ddwumklweu6r6cjs4kjsv2...         1.06%     485.447us         3.66%       1.678ms      83.877us       0.000us         0.00%      45.067ms       2.253ms            20  
+triton_red_fused__to_copy_add_arange_cat_clamp_cos_div_fl...         0.15%      68.448us         0.23%     103.456us       5.173us      20.696ms        45.92%      20.696ms       1.035ms            20  
+triton_red_fused__to_copy_add_arange_cat_clamp_cos_div_fl...         0.00%       0.000us         0.00%       0.000us       0.000us      20.696ms        45.92%      20.696ms       1.035ms            20  
+                          triton_red_fused_cumsum_div_view_1         0.08%      38.781us         0.16%      72.979us       3.649us      17.096ms        37.93%      17.096ms     854.792us            20  
+                          triton_red_fused_cumsum_div_view_1         0.00%       0.000us         0.00%       0.000us       0.000us      17.096ms        37.93%      17.096ms     854.792us            20  
+triton_poi_fused__to_copy_add_arange_clamp_floor_index_mu...         0.14%      66.182us         0.30%     136.445us       6.822us       7.219ms        16.02%       7.219ms     360.962us            20  
+triton_poi_fused__to_copy_add_arange_clamp_floor_index_mu...         0.00%       0.000us         0.00%       0.000us       0.000us       7.219ms        16.02%       7.219ms     360.962us            20  
+triton_per_fused_constant_pad_nd_cumsum_remainder_slice_2...         0.10%      46.269us         0.17%      79.489us       3.974us      56.034us         0.12%      56.034us       2.802us            20  
+triton_per_fused_constant_pad_nd_cumsum_remainder_slice_2...         0.00%       0.000us         0.00%       0.000us       0.000us      56.034us         0.12%      56.034us       2.802us            20  
+                                    TorchDynamo Cache Lookup         0.18%      82.172us         0.18%      82.172us       4.109us       0.000us         0.00%       0.000us       0.000us            20  
+                                           Pregraph bytecode         0.05%      20.902us         0.05%      20.902us       1.045us       0.000us         0.00%       0.000us       0.000us            20  
+------------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 45.871ms
+Self CUDA time total: 45.067ms
+
+CUDA events per call (kernels + memcpy/memset): 4.0

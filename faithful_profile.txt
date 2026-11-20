@@ -1,0 +1,35 @@
+/home/kk-test/paa-env/lib/python3.12/site-packages/torch/profiler/profiler.py:224: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+===== faithful_eager
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+void at::native::tensor_kernel_scan_outer_dim<float,...         0.00%       0.000us         0.00%       0.000us       0.000us     197.651ms        64.62%     197.651ms      19.765ms            10  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us      22.325ms         7.30%      22.325ms     372.080us            60  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us      20.336ms         6.65%      20.336ms       1.017ms            20  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us      11.293ms         3.69%      11.293ms       1.129ms            10  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us      10.181ms         3.33%      10.181ms       1.018ms            10  
+void at::native::index_elementwise_kernel<128, 4, at...         0.00%       0.000us         0.00%       0.000us       0.000us      10.012ms         3.27%      10.012ms     500.617us            20  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       7.700ms         2.52%       7.700ms     769.952us            10  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       7.129ms         2.33%       7.129ms     356.442us            20  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       7.043ms         2.30%       7.043ms     234.774us            30  
+void at::native::reduce_kernel<512, 1, at::native::R...         0.00%       0.000us         0.00%       0.000us       0.000us       4.441ms         1.45%       4.441ms     444.056us            10  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 305.215ms
+Self CUDA time total: 305.853ms
+
+===== faithful_angular_compile
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+triton_red_fused__to_copy_add_arange_cat_clamp_cos_d...         0.00%       0.000us         0.00%       0.000us       0.000us      10.348ms        45.93%      10.348ms       1.035ms            10  
+                     triton_red_fused_cumsum_div_view_1         0.00%       0.000us         0.00%       0.000us       0.000us       8.548ms        37.94%       8.548ms     854.766us            10  
+triton_poi_fused__to_copy_add_arange_clamp_floor_ind...         0.00%       0.000us         0.00%       0.000us       0.000us       3.604ms        16.00%       3.604ms     360.421us            10  
+triton_per_fused_constant_pad_nd_cumsum_remainder_sl...         0.00%       0.000us         0.00%       0.000us       0.000us      27.649us         0.12%      27.649us       2.765us            10  
+                                Activity Buffer Request         3.94%     901.143us         3.94%     901.143us     901.143us       0.000us         0.00%       0.000us       0.000us             1  
+                                         cuLaunchKernel         0.40%      92.415us         0.40%      92.415us       2.310us       0.000us         0.00%       0.000us       0.000us            40  
+                                  cudaDeviceSynchronize        95.66%      21.899ms        95.66%      21.899ms      10.949ms       0.000us         0.00%       0.000us       0.000us             2  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 22.892ms
+Self CUDA time total: 22.528ms
+

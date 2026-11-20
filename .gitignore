@@ -1,0 +1,7 @@
+paa-env/
+__pycache__/
+ddsp/
+*.zip
+*.npz
+*.ncu-rep
+*.nsys-rep
