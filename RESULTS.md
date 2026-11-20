@@ -209,6 +209,26 @@ CUDA events per call (kernels + memcpy/memset): 4.0
   195 GB/s (29% of 672 GB/s). Lower bound: the real traffic of the compiled kernels was not measured.
 - DRAM throughput and SM throughput were NOT measured (no Nsight Compute for sm_120, see section 9).
 
+## 8b. Precision study, software emulation in PyTorch (precision_sweep_results.csv)
+Config (8,100,64000). Each row lowers the precision of only the named part; the rest stays fp64. Not a CUDA kernel: these rows show
+accuracy only, not speed. SNR_dB = -20*log10(rel_l2).
+| variant | max_abs_err_vs_fp64 | rel_l2_err | snr_dB |
+|---|---|---|---|
+| fp64 closed form (sanity) | 2.521e-10 | 1.604e-10 | 195.9 |
+| fixed-point phase, 8 bits | 2.782e-01 | 6.656e-02 | 23.5 |
+| fixed-point phase, 10 bits | 7.607e-02 | 1.675e-02 | 35.5 |
+| fixed-point phase, 12 bits | 1.945e-02 | 4.189e-03 | 47.6 |
+| fixed-point phase, 16 bits | 1.254e-03 | 2.624e-04 | 71.6 |
+| fixed-point phase, 20 bits | 7.352e-05 | 1.639e-05 | 95.7 |
+| fixed-point phase, 24 bits | 4.659e-06 | 1.017e-06 | 119.9 |
+| fixed-point phase, 32 bits | 1.752e-08 | 4.027e-09 | 167.9 |
+| fp32 phase, rest fp64 | 3.509e-06 | 5.638e-07 | 125.0 |
+| bf16 phase, rest fp64 | 1.903e-01 | 4.086e-02 | 27.8 |
+| fp16 phase, rest fp64 | 2.924e-02 | 4.614e-03 | 46.7 |
+| fp32 everywhere | 3.618e-06 | 5.849e-07 | 124.7 |
+| bf16 everywhere | 1.936e-01 | 4.156e-02 | 27.6 |
+| fp16 everywhere | 3.127e-02 | 4.904e-03 | 46.2 |
+
 ## 9. Failures, problems and caveats
 1. First build failed: `nvcc fatal : Unsupported gpu architecture 'compute_120'` (system nvcc 12.0). Worked around with compute_90 PTX
    + driver JIT (no software installed). Native sm_120 build not tested.

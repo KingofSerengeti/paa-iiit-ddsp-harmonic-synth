@@ -95,6 +95,10 @@ frame offsets precomputed; `fused_blockN` = N threads per block.
   {comp_gbs:.0f} GB/s ({100*comp_gbs/PEAK:.0f}% of 672 GB/s). Lower bound: the real traffic of the compiled kernels was not measured.
 - DRAM throughput and SM throughput were NOT measured (no Nsight Compute for sm_120, see section 9).
 
+## 8b. Precision study, software emulation in PyTorch (precision_sweep_results.csv)
+Config (8,100,64000). Each row lowers the precision of only the named part; the rest stays fp64. Not a CUDA kernel: these rows show
+accuracy only, not speed. SNR_dB = -20*log10(rel_l2).
+{table("precision_sweep_results.csv")}
 ## 9. Failures, problems and caveats
 1. First build failed: `nvcc fatal : Unsupported gpu architecture 'compute_120'` (system nvcc 12.0). Worked around with compute_90 PTX
    + driver JIT (no software installed). Native sm_120 build not tested.
