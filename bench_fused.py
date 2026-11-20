@@ -1,6 +1,7 @@
 """Benchmark + ablations for the fused kernel, in the same session and with the same harness as baseline_faithful.py.
 Run:  python bench_fused.py 2>&1 | tee bench_fused_log.txt        (writes fused_results.csv)
       python bench_fused.py --no-baseline                          (skip the torch.compile baseline, faster)
+      python bench_fused.py --out fused_results_run2.csv           (write to another CSV)
 Rows: fused (default), fused_noskip, fused_fastsin, fused_kernel_only (phase offsets precomputed),
       block-size sweep at the main config, and faithful_angular_compile as the opponent."""
 import csv, sys
@@ -13,6 +14,7 @@ from fused_ddsp import fused_harmonic_synthesis, frame_phase_offsets, _ext
 
 SR, HOP = 16000, 64
 WITH_BASELINE = "--no-baseline" not in sys.argv
+OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else "fused_results.csv"
 
 
 def angular(f0, amp, dist, T):
@@ -52,7 +54,7 @@ if __name__ == "__main__":
             "fused": lambda: fused_harmonic_synthesis(f0, amp, dist, T, SR),
             "fused_noskip": lambda: fused_harmonic_synthesis(f0, amp, dist, T, SR, skip_inactive=False),
             "fused_fastsin": lambda: fused_harmonic_synthesis(f0, amp, dist, T, SR, fast_sin=True),
-            "fused_kernel_only": lambda: _ext.fused_harmonic(f0c, ampc, distc, phi, T, float(SR), True, False, 256),
+            "fused_kernel_only": lambda: _ext.fused_harmonic(f0c, ampc, distc, phi, T, float(SR), True, False, 256, False),
         }
         if (B, K, T) == (8, 100, 64000):
             for blk in (64, 128, 512, 1024):
@@ -65,6 +67,6 @@ if __name__ == "__main__":
             except Exception as e:
                 print("FAILED", name, B, K, T, "->", repr(e)[:300])
     if rows:
-        with open("fused_results.csv", "w", newline="") as f:
+        with open(OUT, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
-        print("wrote fused_results.csv")
+        print("wrote", OUT)
