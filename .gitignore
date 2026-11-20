@@ -5,3 +5,4 @@ ddsp/
 *.npz
 *.ncu-rep
 *.nsys-rep
+.~lock*
