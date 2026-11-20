@@ -1,0 +1,21 @@
+GPU: NVIDIA GeForce RTX 5070 | torch 2.11.0+cu128
+--- B=2 K=100 T=1024
+  fused (skip, sinpif)   max_abs=1.119e-06  rel_l2=4.383e-07
+  fused no-skip          max_abs=1.119e-06  rel_l2=4.328e-07
+  fused fast-sin         max_abs=1.203e-06  rel_l2=4.631e-07
+  angular eager fp32     max_abs=2.352e-04  rel_l2=1.051e-04
+--- B=2 K=100 T=16000
+  fused (skip, sinpif)   max_abs=1.716e-06  rel_l2=5.102e-07
+  fused no-skip          max_abs=1.716e-06  rel_l2=5.105e-07
+  fused fast-sin         max_abs=1.894e-06  rel_l2=5.487e-07
+  angular eager fp32     max_abs=1.067e-03  rel_l2=6.221e-04
+--- B=1 K=128 T=64000
+  fused (skip, sinpif)   max_abs=1.794e-06  rel_l2=5.611e-07
+  fused no-skip          max_abs=1.779e-06  rel_l2=5.608e-07
+  fused fast-sin         max_abs=1.898e-06  rel_l2=5.937e-07
+  angular eager fp32     max_abs=2.288e-03  rel_l2=1.643e-03
+--- B=8 K=100 T=64000
+  fused (skip, sinpif)   max_abs=3.499e-06  rel_l2=5.852e-07
+  fused no-skip          max_abs=3.499e-06  rel_l2=5.856e-07
+  fused fast-sin         max_abs=3.663e-06  rel_l2=6.149e-07
+  angular eager fp32     max_abs=4.629e-03  rel_l2=1.933e-03
