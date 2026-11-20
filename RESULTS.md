@@ -209,6 +209,37 @@ CUDA events per call (kernels + memcpy/memset): 4.0
   195 GB/s (29% of 672 GB/s). Lower bound: the real traffic of the compiled kernels was not measured.
 - DRAM throughput and SM throughput were NOT measured (no Nsight Compute for sm_120, see section 9).
 
+## 7b. Control: the fused kernel's maths in plain PyTorch (reform_torch_results.csv, one run)
+`reform_eager` / `reform_compile` = closed-form frame phase, one phase per sample and the fp64 Nyquist cutoff written as PyTorch
+tensor ops (`reform_torch.py`), eager and torch.compile. Only one PyTorch formulation was tried. `fused` and
+`faithful_angular_compile` were re-measured in the same session.
+| impl | B | K | T | ms_median | ms_std | energy_mJ | energy_std | max_abs_err_vs_fp64 | rel_l2_err |
+|---|---|---|---|---|---|---|---|---|---|
+| fused | 1 | 100 | 1024 | 0.0567 | 0.0043 | 2.308 | 0.129 | 2.717e-07 | 5.297e-07 |
+| reform_eager | 1 | 100 | 1024 | 0.3897 | 0.0106 | 18.162 | 0.907 | 2.537e-07 | 5.312e-07 |
+| reform_compile | 1 | 100 | 1024 | 0.0365 | 0.0011 | 1.413 | 0.099 | 2.593e-07 | 3.857e-07 |
+| faithful_angular_compile | 1 | 100 | 1024 | 0.0486 | 0.0034 | 2.554 | 0.151 | 7.854e-06 | 1.718e-05 |
+| fused | 1 | 100 | 16000 | 0.0863 | 0.0015 | 2.582 | 0.201 | 1.794e-06 | 6.137e-07 |
+| reform_eager | 1 | 100 | 16000 | 0.405 | 0.0143 | 33.022 | 0.302 | 1.936e-06 | 6.197e-07 |
+| reform_compile | 1 | 100 | 16000 | 0.1605 | 0.0033 | 11.327 | 0.579 | 1.337e-06 | 4.025e-07 |
+| faithful_angular_compile | 1 | 100 | 16000 | 0.1167 | 0.0041 | 17.81 | 0.677 | 4.019e-04 | 1.966e-04 |
+| fused | 8 | 100 | 64000 | 0.2193 | 0.0055 | 22.82 | 0.768 | 3.499e-06 | 5.852e-07 |
+| reform_eager | 8 | 100 | 64000 | 8.6872 | 0.0794 | 1330.557 | 35.99 | 3.618e-06 | 5.858e-07 |
+| reform_compile | 8 | 100 | 64000 | 3.9003 | 0.0478 | 345.584 | 0.894 | 2.428e-06 | 3.972e-07 |
+| faithful_angular_compile | 8 | 100 | 64000 | 2.0957 | 0.0082 | 442.517 | 14.251 | 3.310e-03 | 1.262e-03 |
+| fused | 8 | 64 | 64000 | 0.2193 | 0.0045 | 22.598 | 0.769 | 3.499e-06 | 5.852e-07 |
+| reform_eager | 8 | 64 | 64000 | 5.7521 | 0.1035 | 912.629 | 11.083 | 3.618e-06 | 5.858e-07 |
+| reform_compile | 8 | 64 | 64000 | 2.0 | 0.0084 | 170.98 | 0.731 | 2.428e-06 | 3.972e-07 |
+| faithful_angular_compile | 8 | 64 | 64000 | 1.1382 | 0.0026 | 265.133 | 10.394 | 2.827e-03 | 9.371e-04 |
+| fused | 8 | 128 | 64000 | 0.2234 | 0.0025 | 22.477 | 0.807 | 3.499e-06 | 5.852e-07 |
+| reform_eager | 8 | 128 | 64000 | 10.9883 | 0.1128 | 1677.958 | 23.452 | 3.618e-06 | 5.863e-07 |
+| reform_compile | 8 | 128 | 64000 | 3.9034 | 0.048 | 342.761 | 1.65 | 2.428e-06 | 3.972e-07 |
+| faithful_angular_compile | 8 | 128 | 64000 | 2.0605 | 0.0154 | 445.091 | 0.432 | 3.310e-03 | 1.262e-03 |
+| fused | 16 | 100 | 64000 | 0.3893 | 0.0041 | 45.92 | 1.734 | 2.793e-06 | 6.094e-07 |
+| reform_eager | 16 | 100 | 64000 | 17.358 | 0.1022 | 2669.796 | 102.179 | 2.699e-06 | 6.091e-07 |
+| reform_compile | 16 | 100 | 64000 | 7.7652 | 0.0601 | 699.013 | 0.632 | 2.466e-06 | 4.137e-07 |
+| faithful_angular_compile | 16 | 100 | 64000 | 4.1334 | 0.0817 | 932.054 | 8.198 | 2.955e-03 | 1.059e-03 |
+
 ## 8b. Precision study, software emulation in PyTorch (precision_sweep_results.csv)
 Config (8,100,64000). Each row lowers the precision of only the named part; the rest stays fp64. Not a CUDA kernel: these rows show
 accuracy only, not speed. SNR_dB = -20*log10(rel_l2).

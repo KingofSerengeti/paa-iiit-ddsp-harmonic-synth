@@ -95,6 +95,11 @@ frame offsets precomputed; `fused_blockN` = N threads per block.
   {comp_gbs:.0f} GB/s ({100*comp_gbs/PEAK:.0f}% of 672 GB/s). Lower bound: the real traffic of the compiled kernels was not measured.
 - DRAM throughput and SM throughput were NOT measured (no Nsight Compute for sm_120, see section 9).
 
+## 7b. Control: the fused kernel's maths in plain PyTorch (reform_torch_results.csv, one run)
+`reform_eager` / `reform_compile` = closed-form frame phase, one phase per sample and the fp64 Nyquist cutoff written as PyTorch
+tensor ops (`reform_torch.py`), eager and torch.compile. Only one PyTorch formulation was tried. `fused` and
+`faithful_angular_compile` were re-measured in the same session.
+{table("reform_torch_results.csv", cols=abl_cols)}
 ## 8b. Precision study, software emulation in PyTorch (precision_sweep_results.csv)
 Config (8,100,64000). Each row lowers the precision of only the named part; the rest stays fp64. Not a CUDA kernel: these rows show
 accuracy only, not speed. SNR_dB = -20*log10(rel_l2).
