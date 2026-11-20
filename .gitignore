@@ -6,3 +6,4 @@ ddsp/
 *.ncu-rep
 *.nsys-rep
 .~lock*
+PAA_project_handoff*.md
