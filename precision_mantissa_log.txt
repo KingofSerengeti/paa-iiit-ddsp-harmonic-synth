@@ -1,0 +1,103 @@
+GPU: NVIDIA GeForce RTX 5070 | torch 2.11.0+cu128
+item 0 done
+item 1 done
+item 2 done
+item 3 done
+item 4 done
+item 5 done
+item 6 done
+item 7 done
+{'format': 'float', 'part': 'phase', 'bits': 8, 'max_abs_err_vs_fp64': '1.903e-01', 'rel_l2_err': '4.086e-02', 'snr_dB': '27.8'}
+{'format': 'float', 'part': 'phase', 'bits': 11, 'max_abs_err_vs_fp64': '2.924e-02', 'rel_l2_err': '4.613e-03', 'snr_dB': '46.7'}
+{'format': 'float', 'part': 'phase', 'bits': 12, 'max_abs_err_vs_fp64': '1.592e-02', 'rel_l2_err': '2.291e-03', 'snr_dB': '52.8'}
+{'format': 'float', 'part': 'phase', 'bits': 14, 'max_abs_err_vs_fp64': '2.793e-03', 'rel_l2_err': '5.748e-04', 'snr_dB': '64.8'}
+{'format': 'float', 'part': 'phase', 'bits': 16, 'max_abs_err_vs_fp64': '7.766e-04', 'rel_l2_err': '1.431e-04', 'snr_dB': '76.9'}
+{'format': 'float', 'part': 'phase', 'bits': 17, 'max_abs_err_vs_fp64': '3.571e-04', 'rel_l2_err': '7.192e-05', 'snr_dB': '82.9'}
+{'format': 'float', 'part': 'phase', 'bits': 18, 'max_abs_err_vs_fp64': '2.380e-04', 'rel_l2_err': '3.583e-05', 'snr_dB': '88.9'}
+{'format': 'float', 'part': 'phase', 'bits': 20, 'max_abs_err_vs_fp64': '5.887e-05', 'rel_l2_err': '9.020e-06', 'snr_dB': '100.9'}
+{'format': 'float', 'part': 'phase', 'bits': 22, 'max_abs_err_vs_fp64': '1.208e-05', 'rel_l2_err': '2.237e-06', 'snr_dB': '113.0'}
+{'format': 'float', 'part': 'phase', 'bits': 24, 'max_abs_err_vs_fp64': '3.509e-06', 'rel_l2_err': '5.638e-07', 'snr_dB': '125.0'}
+{'format': 'float', 'part': 'phase', 'bits': 26, 'max_abs_err_vs_fp64': '7.379e-07', 'rel_l2_err': '1.413e-07', 'snr_dB': '137.0'}
+{'format': 'float', 'part': 'phase', 'bits': 28, 'max_abs_err_vs_fp64': '1.609e-07', 'rel_l2_err': '3.509e-08', 'snr_dB': '149.1'}
+{'format': 'float', 'part': 'phase', 'bits': 32, 'max_abs_err_vs_fp64': '1.201e-08', 'rel_l2_err': '2.203e-09', 'snr_dB': '173.1'}
+{'format': 'float', 'part': 'phase', 'bits': 40, 'max_abs_err_vs_fp64': '2.493e-10', 'rel_l2_err': '1.606e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'phase', 'bits': 48, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'phase', 'bits': 53, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'amp', 'bits': 8, 'max_abs_err_vs_fp64': '1.499e-03', 'rel_l2_err': '1.639e-03', 'snr_dB': '55.7'}
+{'format': 'float', 'part': 'amp', 'bits': 11, 'max_abs_err_vs_fp64': '1.885e-04', 'rel_l2_err': '2.063e-04', 'snr_dB': '73.7'}
+{'format': 'float', 'part': 'amp', 'bits': 12, 'max_abs_err_vs_fp64': '9.820e-05', 'rel_l2_err': '1.033e-04', 'snr_dB': '79.7'}
+{'format': 'float', 'part': 'amp', 'bits': 14, 'max_abs_err_vs_fp64': '2.527e-05', 'rel_l2_err': '2.576e-05', 'snr_dB': '91.8'}
+{'format': 'float', 'part': 'amp', 'bits': 16, 'max_abs_err_vs_fp64': '6.028e-06', 'rel_l2_err': '6.445e-06', 'snr_dB': '103.8'}
+{'format': 'float', 'part': 'amp', 'bits': 17, 'max_abs_err_vs_fp64': '2.940e-06', 'rel_l2_err': '3.221e-06', 'snr_dB': '109.8'}
+{'format': 'float', 'part': 'amp', 'bits': 18, 'max_abs_err_vs_fp64': '1.466e-06', 'rel_l2_err': '1.610e-06', 'snr_dB': '115.9'}
+{'format': 'float', 'part': 'amp', 'bits': 20, 'max_abs_err_vs_fp64': '3.785e-07', 'rel_l2_err': '4.024e-07', 'snr_dB': '127.9'}
+{'format': 'float', 'part': 'amp', 'bits': 22, 'max_abs_err_vs_fp64': '9.738e-08', 'rel_l2_err': '1.005e-07', 'snr_dB': '140.0'}
+{'format': 'float', 'part': 'amp', 'bits': 24, 'max_abs_err_vs_fp64': '2.371e-08', 'rel_l2_err': '2.513e-08', 'snr_dB': '152.0'}
+{'format': 'float', 'part': 'amp', 'bits': 26, 'max_abs_err_vs_fp64': '6.061e-09', 'rel_l2_err': '6.293e-09', 'snr_dB': '164.0'}
+{'format': 'float', 'part': 'amp', 'bits': 28, 'max_abs_err_vs_fp64': '1.539e-09', 'rel_l2_err': '1.582e-09', 'snr_dB': '176.0'}
+{'format': 'float', 'part': 'amp', 'bits': 32, 'max_abs_err_vs_fp64': '2.540e-10', 'rel_l2_err': '1.883e-10', 'snr_dB': '194.5'}
+{'format': 'float', 'part': 'amp', 'bits': 40, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'amp', 'bits': 48, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'amp', 'bits': 53, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'sin', 'bits': 8, 'max_abs_err_vs_fp64': '1.108e-03', 'rel_l2_err': '1.327e-03', 'snr_dB': '57.5'}
+{'format': 'float', 'part': 'sin', 'bits': 11, 'max_abs_err_vs_fp64': '1.467e-04', 'rel_l2_err': '1.673e-04', 'snr_dB': '75.5'}
+{'format': 'float', 'part': 'sin', 'bits': 12, 'max_abs_err_vs_fp64': '7.010e-05', 'rel_l2_err': '8.407e-05', 'snr_dB': '81.5'}
+{'format': 'float', 'part': 'sin', 'bits': 14, 'max_abs_err_vs_fp64': '1.814e-05', 'rel_l2_err': '2.101e-05', 'snr_dB': '93.5'}
+{'format': 'float', 'part': 'sin', 'bits': 16, 'max_abs_err_vs_fp64': '4.300e-06', 'rel_l2_err': '5.270e-06', 'snr_dB': '105.6'}
+{'format': 'float', 'part': 'sin', 'bits': 17, 'max_abs_err_vs_fp64': '2.258e-06', 'rel_l2_err': '2.632e-06', 'snr_dB': '111.6'}
+{'format': 'float', 'part': 'sin', 'bits': 18, 'max_abs_err_vs_fp64': '1.095e-06', 'rel_l2_err': '1.317e-06', 'snr_dB': '117.6'}
+{'format': 'float', 'part': 'sin', 'bits': 20, 'max_abs_err_vs_fp64': '2.875e-07', 'rel_l2_err': '3.283e-07', 'snr_dB': '129.7'}
+{'format': 'float', 'part': 'sin', 'bits': 22, 'max_abs_err_vs_fp64': '7.179e-08', 'rel_l2_err': '8.226e-08', 'snr_dB': '141.7'}
+{'format': 'float', 'part': 'sin', 'bits': 24, 'max_abs_err_vs_fp64': '1.793e-08', 'rel_l2_err': '2.057e-08', 'snr_dB': '153.7'}
+{'format': 'float', 'part': 'sin', 'bits': 26, 'max_abs_err_vs_fp64': '4.380e-09', 'rel_l2_err': '5.145e-09', 'snr_dB': '165.8'}
+{'format': 'float', 'part': 'sin', 'bits': 28, 'max_abs_err_vs_fp64': '1.106e-09', 'rel_l2_err': '1.295e-09', 'snr_dB': '177.8'}
+{'format': 'float', 'part': 'sin', 'bits': 32, 'max_abs_err_vs_fp64': '2.506e-10', 'rel_l2_err': '1.794e-10', 'snr_dB': '194.9'}
+{'format': 'float', 'part': 'sin', 'bits': 40, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'sin', 'bits': 48, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'sin', 'bits': 53, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'accum', 'bits': 8, 'max_abs_err_vs_fp64': '1.708e-02', 'rel_l2_err': '9.724e-03', 'snr_dB': '40.2'}
+{'format': 'float', 'part': 'accum', 'bits': 11, 'max_abs_err_vs_fp64': '2.122e-03', 'rel_l2_err': '1.207e-03', 'snr_dB': '58.4'}
+{'format': 'float', 'part': 'accum', 'bits': 12, 'max_abs_err_vs_fp64': '9.470e-04', 'rel_l2_err': '6.045e-04', 'snr_dB': '64.4'}
+{'format': 'float', 'part': 'accum', 'bits': 14, 'max_abs_err_vs_fp64': '2.410e-04', 'rel_l2_err': '1.515e-04', 'snr_dB': '76.4'}
+{'format': 'float', 'part': 'accum', 'bits': 16, 'max_abs_err_vs_fp64': '6.155e-05', 'rel_l2_err': '3.781e-05', 'snr_dB': '88.4'}
+{'format': 'float', 'part': 'accum', 'bits': 17, 'max_abs_err_vs_fp64': '3.135e-05', 'rel_l2_err': '1.893e-05', 'snr_dB': '94.5'}
+{'format': 'float', 'part': 'accum', 'bits': 18, 'max_abs_err_vs_fp64': '1.937e-05', 'rel_l2_err': '9.452e-06', 'snr_dB': '100.5'}
+{'format': 'float', 'part': 'accum', 'bits': 20, 'max_abs_err_vs_fp64': '3.970e-06', 'rel_l2_err': '2.358e-06', 'snr_dB': '112.5'}
+{'format': 'float', 'part': 'accum', 'bits': 22, 'max_abs_err_vs_fp64': '1.016e-06', 'rel_l2_err': '5.916e-07', 'snr_dB': '124.6'}
+{'format': 'float', 'part': 'accum', 'bits': 24, 'max_abs_err_vs_fp64': '2.788e-07', 'rel_l2_err': '1.481e-07', 'snr_dB': '136.6'}
+{'format': 'float', 'part': 'accum', 'bits': 26, 'max_abs_err_vs_fp64': '6.845e-08', 'rel_l2_err': '3.693e-08', 'snr_dB': '148.7'}
+{'format': 'float', 'part': 'accum', 'bits': 28, 'max_abs_err_vs_fp64': '1.475e-08', 'rel_l2_err': '9.237e-09', 'snr_dB': '160.7'}
+{'format': 'float', 'part': 'accum', 'bits': 32, 'max_abs_err_vs_fp64': '9.562e-10', 'rel_l2_err': '5.999e-10', 'snr_dB': '184.4'}
+{'format': 'float', 'part': 'accum', 'bits': 40, 'max_abs_err_vs_fp64': '2.523e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'accum', 'bits': 48, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'accum', 'bits': 53, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'all', 'bits': 8, 'max_abs_err_vs_fp64': '1.897e-01', 'rel_l2_err': '4.193e-02', 'snr_dB': '27.5'}
+{'format': 'float', 'part': 'all', 'bits': 11, 'max_abs_err_vs_fp64': '2.923e-02', 'rel_l2_err': '4.775e-03', 'snr_dB': '46.4'}
+{'format': 'float', 'part': 'all', 'bits': 12, 'max_abs_err_vs_fp64': '1.592e-02', 'rel_l2_err': '2.373e-03', 'snr_dB': '52.5'}
+{'format': 'float', 'part': 'all', 'bits': 14, 'max_abs_err_vs_fp64': '2.799e-03', 'rel_l2_err': '5.956e-04', 'snr_dB': '64.5'}
+{'format': 'float', 'part': 'all', 'bits': 16, 'max_abs_err_vs_fp64': '7.771e-04', 'rel_l2_err': '1.484e-04', 'snr_dB': '76.6'}
+{'format': 'float', 'part': 'all', 'bits': 17, 'max_abs_err_vs_fp64': '3.565e-04', 'rel_l2_err': '7.453e-05', 'snr_dB': '82.6'}
+{'format': 'float', 'part': 'all', 'bits': 18, 'max_abs_err_vs_fp64': '2.369e-04', 'rel_l2_err': '3.712e-05', 'snr_dB': '88.6'}
+{'format': 'float', 'part': 'all', 'bits': 20, 'max_abs_err_vs_fp64': '5.893e-05', 'rel_l2_err': '9.340e-06', 'snr_dB': '100.6'}
+{'format': 'float', 'part': 'all', 'bits': 22, 'max_abs_err_vs_fp64': '1.209e-05', 'rel_l2_err': '2.316e-06', 'snr_dB': '112.7'}
+{'format': 'float', 'part': 'all', 'bits': 24, 'max_abs_err_vs_fp64': '3.514e-06', 'rel_l2_err': '5.843e-07', 'snr_dB': '124.7'}
+{'format': 'float', 'part': 'all', 'bits': 26, 'max_abs_err_vs_fp64': '7.395e-07', 'rel_l2_err': '1.463e-07', 'snr_dB': '136.7'}
+{'format': 'float', 'part': 'all', 'bits': 28, 'max_abs_err_vs_fp64': '1.612e-07', 'rel_l2_err': '3.632e-08', 'snr_dB': '148.8'}
+{'format': 'float', 'part': 'all', 'bits': 32, 'max_abs_err_vs_fp64': '1.192e-08', 'rel_l2_err': '2.281e-09', 'snr_dB': '172.8'}
+{'format': 'float', 'part': 'all', 'bits': 40, 'max_abs_err_vs_fp64': '2.494e-10', 'rel_l2_err': '1.606e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'all', 'bits': 48, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'float', 'part': 'all', 'bits': 53, 'max_abs_err_vs_fp64': '2.521e-10', 'rel_l2_err': '1.604e-10', 'snr_dB': '195.9'}
+{'format': 'fixed', 'part': 'phase', 'bits': 8, 'max_abs_err_vs_fp64': '2.782e-01', 'rel_l2_err': '6.656e-02', 'snr_dB': '23.5'}
+{'format': 'fixed', 'part': 'phase', 'bits': 10, 'max_abs_err_vs_fp64': '7.607e-02', 'rel_l2_err': '1.675e-02', 'snr_dB': '35.5'}
+{'format': 'fixed', 'part': 'phase', 'bits': 12, 'max_abs_err_vs_fp64': '1.945e-02', 'rel_l2_err': '4.189e-03', 'snr_dB': '47.6'}
+{'format': 'fixed', 'part': 'phase', 'bits': 14, 'max_abs_err_vs_fp64': '4.693e-03', 'rel_l2_err': '1.053e-03', 'snr_dB': '59.6'}
+{'format': 'fixed', 'part': 'phase', 'bits': 16, 'max_abs_err_vs_fp64': '1.254e-03', 'rel_l2_err': '2.624e-04', 'snr_dB': '71.6'}
+{'format': 'fixed', 'part': 'phase', 'bits': 18, 'max_abs_err_vs_fp64': '3.084e-04', 'rel_l2_err': '6.589e-05', 'snr_dB': '83.6'}
+{'format': 'fixed', 'part': 'phase', 'bits': 20, 'max_abs_err_vs_fp64': '7.352e-05', 'rel_l2_err': '1.639e-05', 'snr_dB': '95.7'}
+{'format': 'fixed', 'part': 'phase', 'bits': 22, 'max_abs_err_vs_fp64': '1.942e-05', 'rel_l2_err': '4.121e-06', 'snr_dB': '107.7'}
+{'format': 'fixed', 'part': 'phase', 'bits': 24, 'max_abs_err_vs_fp64': '4.659e-06', 'rel_l2_err': '1.017e-06', 'snr_dB': '119.9'}
+{'format': 'fixed', 'part': 'phase', 'bits': 26, 'max_abs_err_vs_fp64': '1.176e-06', 'rel_l2_err': '2.567e-07', 'snr_dB': '131.8'}
+{'format': 'fixed', 'part': 'phase', 'bits': 28, 'max_abs_err_vs_fp64': '3.033e-07', 'rel_l2_err': '6.403e-08', 'snr_dB': '143.9'}
+{'format': 'fixed', 'part': 'phase', 'bits': 30, 'max_abs_err_vs_fp64': '7.147e-08', 'rel_l2_err': '1.598e-08', 'snr_dB': '155.9'}
+{'format': 'fixed', 'part': 'phase', 'bits': 32, 'max_abs_err_vs_fp64': '1.752e-08', 'rel_l2_err': '4.027e-09', 'snr_dB': '167.9'}
+wrote precision_mantissa_results.csv
